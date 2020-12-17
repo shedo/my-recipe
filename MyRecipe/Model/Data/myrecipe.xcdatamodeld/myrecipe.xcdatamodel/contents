@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Ingredient" representedClassName="Ingredient" syncable="YES" codeGenerationType="class">
+        <attribute name="imagePath" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="originalName" optional="YES" attributeType="String"/>
+        <relationship name="savedRecipe" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SavedRecipe" inverseName="ingredient" inverseEntity="SavedRecipe"/>
+    </entity>
+    <entity name="Instruction" representedClassName="Instruction" syncable="YES" codeGenerationType="class">
+        <attribute name="instruction" optional="YES" attributeType="String"/>
+        <attribute name="stepNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="savedRecipe" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="SavedRecipe" inverseName="instruction" inverseEntity="SavedRecipe"/>
+    </entity>
+    <entity name="SavedRecipe" representedClassName="SavedRecipe" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="timeRequired" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="ingredient" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="savedRecipe" inverseEntity="Ingredient"/>
+        <relationship name="instruction" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Instruction" inverseName="savedRecipe" inverseEntity="Instruction"/>
+    </entity>
+    <elements>
+        <element name="Ingredient" positionX="-499.29931640625" positionY="139.0260620117188" width="128" height="89"/>
+        <element name="Instruction" positionX="-493.516357421875" positionY="273.9155883789062" width="117.09423828125" height="74"/>
+        <element name="SavedRecipe" positionX="-729.8734741210938" positionY="153.3209075927734" width="128" height="134"/>
+    </elements>
+</model>
