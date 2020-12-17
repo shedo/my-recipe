@@ -23,7 +23,8 @@ In the third tab of the bottom tabbar there is the list of saved dishes, by clic
 2. [UIKit](https://developer.apple.com/documentation/uikit)
 3. [Core Data](https://developer.apple.com/documentation/coredata) to store images.
 
-**External Library**
+**External Library**:
+
 4. [Alamofire](https://github.com/Alamofire/Alamofire) to make HTTP request.
 
 ## How to Build
